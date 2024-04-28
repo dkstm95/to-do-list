@@ -129,10 +129,12 @@ Authorization: Bearer {access_token}
 ```json
 {
   "id": 1,
+  "user_id": "1",
   "title": "test title",
   "content": "test content",
-  "created_at": "2022-01-01T00:00:00",
-  "updated_at": "2022-01-01T00:00:00"
+  "status": "TODO",
+  "created_at": 1714293218,
+  "updated_at": 1714293218
 }
 ```
 
@@ -147,7 +149,7 @@ Authorization: Bearer {access_token}
 ```
 - Request Param
 ```
-cursor: 0 (default 0)
+cursor: 0 (default null)
 limit: 10 (default Integer.MAX_VALUE)
 sort: DESC | ASC (default DESC)
 ```
@@ -155,14 +157,15 @@ sort: DESC | ASC (default DESC)
 ```json
 {
   "total_count": 1,
+  "next_cursor": "1",
   "data": [
     {
       "id": 1,
       "title": "test title",
       "content": "test content",
       "status": "TODO",
-      "created_at": "2022-01-01T00:00:00",
-      "updated_at": "2022-01-01T00:00:00"
+      "created_at": 1714293218,
+      "updated_at": 1714293218
     }
   ]
 }
@@ -187,10 +190,11 @@ Authorization: Bearer {access_token}
 ```json
 {
   "id": 1,
+  "user_id": "1",
   "title": "test title",
   "content": "test content",
   "status": "DONE",
-  "created_at": "2022-01-01T00:00:00",
-  "updated_at": "2022-01-01T00:00:00"
+  "created_at": 1714293218,
+  "updated_at": 1714293218
 }
 ```
