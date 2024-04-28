@@ -1,5 +1,6 @@
 package com.seungilahn.todolist.common;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -16,6 +17,12 @@ public class GlobalControllerAdvice {
     @ExceptionHandler(RuntimeException.class)
     public ApiResponse<?> handleRuntimeException(RuntimeException e) {
         log.error("Runtime exception: ", e);
+        return ApiResponse.fail(ApiStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ApiResponse<?> handleEntityNotFoundException(EntityNotFoundException e) {
+        log.error("Entity not found: ", e);
         return ApiResponse.fail(ApiStatus.INTERNAL_SERVER_ERROR);
     }
 
