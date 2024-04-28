@@ -13,20 +13,20 @@
 │   ├── main
 │   │   ├── java
 │   │   │   └── com.seungilahn
-│   │   │       └── to-do-list
+│   │   │       └── todolist
+│   │   │           ├── adapter
+│   │   │           │   ├── in
+│   │   │           │   └── out
+│   │   │           ├── application
+│   │   │           │   ├── port
+│   │   │           │   │   ├── in
+│   │   │           │   │   └── out
+│   │   │           │   └── service
 │   │   │           ├── auth
 │   │   │           ├── common
-│   │   │           ├── config
+│   │   │           ├── configuration
+│   │   │           ├── domain
 │   │   │           └── user
-│   │   │               ├── adapter
-│   │   │                   ├── in
-│   │   │                   └── out
-│   │   │               ├── application
-│   │   │                   ├── port
-│   │   │                       ├── in
-│   │   │                       └── out
-│   │   │                   └── service
-│   │   │               └── domain
 ```
 
 ## API
