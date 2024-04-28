@@ -3,12 +3,14 @@ package com.seungilahn.todolist.user.domain;
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.security.core.GrantedAuthority;
 
 import java.time.Instant;
 import java.util.Collection;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class User {
 
     @Id
