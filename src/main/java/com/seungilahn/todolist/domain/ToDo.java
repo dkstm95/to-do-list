@@ -83,12 +83,24 @@ public class ToDo {
         return updatedAt;
     }
 
-    public boolean isOngoing() {
-        return status == ToDoStatus.ONGOING;
-    }
-
     public void changeStatus(ToDoStatus status) {
+        validateToDoStatus(status);
         this.status = status;
     }
 
+    private void validateToDoStatus(ToDoStatus status) {
+        if (status == ToDoStatus.STANDBY && !isOngoing() && !isStandby()) {
+            throw new IllegalStateException("Cannot change status to STANDBY when current status is not ONGOING");
+        }
+    }
+
+    private boolean isOngoing() {
+        return status == ToDoStatus.ONGOING;
+    }
+
+    private boolean isStandby() {
+        return status == ToDoStatus.STANDBY;
+    }
+
 }
+

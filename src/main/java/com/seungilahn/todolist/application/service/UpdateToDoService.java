@@ -6,7 +6,6 @@ import com.seungilahn.todolist.application.port.out.LoadToDoPort;
 import com.seungilahn.todolist.application.port.out.SaveToDoPort;
 import com.seungilahn.todolist.common.UseCase;
 import com.seungilahn.todolist.domain.ToDo;
-import com.seungilahn.todolist.domain.ToDoStatus;
 import org.springframework.transaction.annotation.Transactional;
 
 @UseCase
@@ -26,17 +25,9 @@ class UpdateToDoService implements UpdateToDoUseCase {
 
         ToDo toDo = loadToDoPort.loadById(command.toDoId());
 
-        validateToDoStatus(toDo, command.status());
-
         toDo.changeStatus(command.status());
 
         return saveToDoPort.save(toDo);
-    }
-
-    private void validateToDoStatus(ToDo toDo, ToDoStatus commandStatus) {
-        if (commandStatus == ToDoStatus.STANDBY && !toDo.isOngoing()) {
-            throw new IllegalStateException("Cannot change status to STANDBY when current status is not ONGOING");
-        }
     }
 
 }
