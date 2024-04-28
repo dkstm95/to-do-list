@@ -150,7 +150,7 @@ Authorization: Bearer {access_token}
 - Request Param
 ```
 cursor: 0 (default null)
-limit: 10 (default Integer.MAX_VALUE)
+limit: 10 (default 10)
 sort: DESC | ASC (default DESC)
 ```
 - Response
