@@ -24,3 +24,16 @@ create table if not exists `token`
     primary key (`id`)
 );
 create unique index `uk_token_token` on `token` (`token`);
+
+create table if not exists `to_do`
+(
+    `id` bigint not null auto_increment,
+    `user_id` bigint not null comment 'user id',
+    `title` varchar(30) not null comment '할 일 제목',
+    `content` varchar(100) null comment '할 일 내용',
+    `status` varchar(7) not null comment '할 일 상태',
+    `created_at` timestamp not null default current_timestamp,
+    `updated_at` timestamp not null,
+    primary key (`id`)
+);
+create index `idx_to_do_user_id` on `to_do` (`user_id`);
