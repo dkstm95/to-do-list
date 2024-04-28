@@ -23,10 +23,16 @@
 │   │   │           │   │   └── out
 │   │   │           │   └── service
 │   │   │           ├── auth
+│   │   │           │   ├── adapter
+│   │   │           │   ├── application
+│   │   │           │   └── domain
 │   │   │           ├── common
 │   │   │           ├── configuration
 │   │   │           ├── domain
 │   │   │           └── user
+│   │   │               ├── adapter
+│   │   │               ├── application
+│   │   │               └── domain
 ```
 
 ## API
