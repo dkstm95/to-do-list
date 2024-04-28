@@ -1,4 +1,4 @@
-package com.seungilahn.common;
+package com.seungilahn.todolist.common;
 
 import org.springframework.http.HttpStatus;
 

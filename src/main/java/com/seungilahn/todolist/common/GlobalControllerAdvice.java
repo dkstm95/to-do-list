@@ -1,4 +1,4 @@
-package com.seungilahn.common;
+package com.seungilahn.todolist.common;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
